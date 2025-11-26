@@ -1,295 +1,286 @@
-⭐ FullStack Rating Application
+<h1 align="center">🌟 FullStack Rating Application 🌟</h1>
 
-A complete full-stack web application built using Express.js, React.js, and MySQL/SQLite, fulfilling all requirements from the FullStack Intern Coding Challenge.
+<p align="center">
+A complete full-stack application built with <b>Express.js</b> + <b>React.js</b> fulfilling every requirement from the 
+<b>FullStack Intern Coding Challenge</b> :contentReference[oaicite:1]{index=1}.
+</p>
 
-Users can rate stores (1–5), admins can manage the system, and store owners can view ratings related to their stores.
+---
 
-📌 Table of Contents
+<h2>📌 Table of Contents</h2>
 
-Project Overview
+- [Project Overview](#project-overview)
+- [Tech Stack](#tech-stack)
+- [Requirements Coverage](#requirements-coverage)
+- [Installation & Setup](#installation--setup)
+- [Running the Project](#running-the-project)
+- [Role-Based Functionality Guide](#role-based-functionality-guide)
+- [Validation Rules](#validation-rules)
+- [API Summary](#api-summary)
+- [Folder Structure](#folder-structure)
+- [Testing Checklist](#testing-checklist)
 
-Tech Stack
+---
 
-Features Coverage (Mapped to PDF Requirements)
+<h2 id="project-overview">🚀 Project Overview</h2>
 
-Installation & Setup
+This project is a full-stack rating platform where:
 
-Running the Project
+- ⭐ Normal users can sign up, log in, and rate stores  
+- 🛠️ Admins can manage users & stores  
+- 🏪 Store owners can view ratings for their stores  
 
-Role-Based Functionality Guide
+All requirements from the official PDF are implemented:  
+✔ User roles  
+✔ Rating system  
+✔ Admin dashboard  
+✔ Validations  
+✔ Search & filtering  
+✔ Secure JWT authentication  
 
-Normal User
+Reference: FullStack Intern Coding Challenge PDF :contentReference[oaicite:2]{index=2}.
 
-System Administrator
+---
 
-Store Owner
+<h2 id="tech-stack">🧰 Tech Stack</h2>
 
-Validation Rules
+### 🔹 Frontend
+- React.js (Vite)
+- Tailwind CSS (UI enhancement)
+- Axios  
 
-API Summary
+### 🔹 Backend
+- Node.js (Express.js)
+- Sequelize ORM
+- MySQL / SQLite
+- JWT Authentication
+- Joi Validation
 
-Folder Structure
+---
 
-Screens / Testing Guide
+<h2 id="requirements-coverage">📘 Requirements Coverage (Mapped to PDF)</h2>
 
-⭐ 1. Project Overview
+<h3>🛠️ System Administrator Features</h3>
 
-This application allows users to:
+| Requirement | Status |
+|------------|--------|
+| Add stores | ✅ Implemented |
+| Add users (normal/admin/owner) | ✅ |
+| Dashboard: total users, stores, ratings | ✅ |
+| View stores with rating | ✅ |
+| View users with filtering (name/email/address/role) | ✅ |
+| View complete user details | ✅ |
+| Owner's store rating included | ✅ |
+| Logout | ✅ |
 
-Sign up & log in
+---
 
-View stores
+<h3>🧑‍💻 Normal User Features</h3>
 
-Submit & update ratings
+| Requirement | Status |
+|------------|--------|
+| Signup | ✅ |
+| Login | ✅ |
+| Update password | ✅ |
+| View stores | ✅ |
+| Search by name/address | ✅ |
+| See store info | ✅ |
+| Submit rating (1–5) | ✅ |
+| Modify rating | ✅ |
+| Logout | ✅ |
 
-Admin adds users and stores
+---
 
-Store owners see ratings for their stores
+<h3>🏪 Store Owner Features</h3>
 
-All features match the official specification:
-✔ user roles
-✔ rating system
-✔ admin dashboard
-✔ form validations
-✔ search & filtering
-✔ secure authentication (JWT)
+| Requirement | Status |
+|------------|--------|
+| Login | ✅ |
+| Update password | ✅ |
+| View users who rated them | ✅ |
+| See average store rating | ✅ |
+| Logout | ✅ |
 
-Reference: FullStack Intern Coding Challenge PDF 
+---
 
-FullStack Intern Coding Challen…
+<h3>📝 Form Validations (PDF Requirements)</h3>
 
-⭐ 2. Tech Stack
-Frontend
+| Field | Required | Implemented |
+|-------|----------|-------------|
+| Name | 20–60 characters | ✅ Joi Validation |
+| Address | Max 400 chars | ✅ |
+| Password | 8–16 chars, 1 uppercase, 1 special | ✅ |
+| Email | Valid email | ✅ |
 
-React.js + Vite
+---
 
-Axios
+<h2 id="installation--setup">⚙️ Installation & Setup</h2>
 
-TailwindCSS (Enhanced UI, optional)
+### 1️⃣ Clone the repo
 
-Backend
-
-Node.js (Express.js)
-
-Sequelize ORM
-
-MySQL or SQLite (default)
-
-JWT Authentication
-
-Joi Validation
-
-⭐ 3. Requirements Coverage (Mapped to PDF)
-✔ User Roles Implemented
-
-System Administrator
-
-Normal User
-
-Store Owner
-(As required) 
-
-FullStack Intern Coding Challen…
-
-✔ System Administrator Features
-Requirement	Implemented
-Add stores	✔ /api/admin/stores
-Add users (admin/user/owner)	✔ /api/admin/users
-Dashboard counts	✔ /api/admin/dashboard
-View store list with rating	✔ /api/admin/stores
-View user list (filters: name/email/address/role)	✔ /api/admin/users
-View details of all users	✔ Yes
-Owner's store rating	✔ Included
-Logout	✔ Frontend implemented
-✔ Normal User Features
-Requirement	Implemented
-Signup page	✔ /signup (React UI)
-Login	✔ /login
-Update password	✔ /api/users/update-password
-View stores	✔ /api/stores
-Search stores by name/address	✔ UI search bar
-Submit rating (1–5)	✔ /api/ratings/:storeId
-Modify rating	✔ Same endpoint updates rating
-Logout	✔
-✔ Store Owner Features
-Requirement	Implemented
-Login	✔ /login
-Update password	✔
-View who rated their store	✔ /api/stores/owner/:storeId/dashboard
-See average rating	✔ Calculated dynamically
-Logout	✔
-✔ Form Validations (PDF Requirements)
-Field	Requirement from PDF	Implemented?
-Name	20–60 chars	✔ Joi validation
-Address	Max 400 chars	✔
-Password	8–16 chars, 1 uppercase, 1 special	✔ Regex validated
-Email	Must be valid	✔ Joi validated
-
-Reference section: Form Validations 
-
-FullStack Intern Coding Challen…
-
-✔ Additional Notes
-
-Sorting supported by frontend filters
-
-Folder structure follows best practices
-
-Database schema normalized (Users, Stores, Ratings tables)
-
-⭐ 4. Installation & Setup
-📦 Clone the repository
+```bash
 git clone https://github.com/Omkar090804/Roxiler.git
 cd Roxiler
 
-📌 4.1 Backend Setup
+<h3>📦 Backend Setup</h3>
+
 cd backend
 npm install
 
 Create .env:
+
 DB_DIALECT=sqlite
 DB_STORAGE=./database.sqlite
 JWT_SECRET=your_secret_here
 PORT=4000
 
-Seed default admin, owner & sample store:
+Seed sample admin, owner & store:
+
 node src/seed.js
 
-Start backend:
+
+Run backend:
+
 npm run dev
 
 
-Backend now runs at:
-
+Backend runs at:
 👉 http://localhost:4000
 
-📌 4.2 Frontend Setup
+<h3>🎨 Frontend Setup</h3>
 cd frontend
 npm install
 npm run dev
 
 
-Frontend opens at:
-
+Frontend runs at:
 👉 http://localhost:3000
 
-⭐ 5. Running the Project (Full Flow)
+<h2 id="running-the-project">🏃 Running the Project</h2>
 
-Open two terminals
+Open two terminals:
 
-Terminal 1 → backend → npm run dev
+Terminal 1 → Backend
+cd backend
+npm run dev
 
-Terminal 2 → frontend → npm run dev
+Terminal 2 → Frontend
+cd frontend
+npm run dev
 
-Test backend availability:
+
+Verify backend:
 👉 http://localhost:4000/api/health
 
-Open frontend UI:
+Open the UI:
 👉 http://localhost:3000
 
-⭐ 6. Role-Based Usage Guide
-🟢 Normal User Flow
+<h2 id="role-based-functionality-guide">👥 Role-Based Functionality Guide</h2>
+<h3>🟢 Normal User Flow</h3>
 
-Visit /signup
+Go to Signup
 
-Enter name ≥ 20 chars, password with special + uppercase
+Enter valid name, email, password
 
 Login
 
-View all stores
+View stores
 
 Submit rating (star UI)
 
-Update rating anytime
+Update rating
 
 Logout
 
-🔵 Admin Flow
+Signup fields follow PDF rules.
 
-Use seed login:
-admin@example.com / Admin@123
+<h3>🔵 Admin Flow</h3>
 
-Dashboard shows:
+Seed credentials:
 
-Total Users
+admin@example.com
+Admin@123
 
-Total Stores
-
-Total Ratings
 
 Admin can:
 
 Add stores
 
-Add users (user/admin/owner)
+Add users (normal/admin/owner)
 
-View all users
+View dashboard stats
 
-View all stores
+Filter/search users
 
-Apply filters
+View stores with ratings
 
 Logout
 
-🟡 Store Owner Flow
+<h3>🟡 Store Owner Flow</h3>
 
-Use seed login:
-owner@example.com / Owner@123
+Seed credentials:
+
+owner@example.com
+Owner@123
+
 
 Owner can:
 
-View average rating of their store
+View ratings on their store
 
-See list of users who rated them
+View average rating
 
 Update password
 
 Logout
 
-⭐ 7. Validation Rules (Enforced through Joi & UI)
-Field	Requirement	Example
-Name	20–60 chars	Omkar Darekar Full Stack Dev
-Password	8–16 chars, 1 uppercase, 1 special	Omkar@123
-Address	≤ 400 chars	Pune, Maharashtra
-Email	Must be valid	omkar@example.com
-⭐ 8. API Summary
-Endpoint	Method	Role	Purpose
+<h2 id="validation-rules">✔️ Validation Rules</h2>
+
+Name: 20–60 characters
+
+Password: Must include uppercase + special char
+
+Address: Max 400 characters
+
+Email: Valid email format
+
+Implemented using Joi validation.
+
+<h2 id="api-summary">📡 API Summary</h2>
+Endpoint	Method	Role	Description
 /api/auth/signup	POST	Public	Register user
-/api/auth/login	POST	Public	Login & get token
-/api/admin/stores	POST	Admin	Add store
+/api/auth/login	POST	Public	Login
 /api/admin/users	POST	Admin	Add user/admin/owner
-/api/admin/dashboard	GET	Admin	Stats
+/api/admin/stores	POST	Admin	Add store
+/api/admin/dashboard	GET	Admin	Dashboard stats
 /api/stores	GET	All	List stores
-/api/ratings/:storeId	POST	User	Submit/update rating
-/api/stores/owner/:id/dashboard	GET	Owner	Owner stats
-⭐ 9. Folder Structure
+/api/ratings/:id	POST	User	Submit/update rating
+/api/stores/owner/:id/dashboard	GET	Owner	Owner analytics
+<h2 id="folder-structure">📁 Folder Structure</h2>
 Roxiler/
  ├── backend/
  │    ├── src/
  │    │    ├── models/
  │    │    ├── routes/
  │    │    ├── middleware/
- │    │    ├── utils/
- │    ├── .env
+ │    │    └── utils/
  │    ├── package.json
- │
+ │    └── .env
  ├── frontend/
  │    ├── src/
  │    │    ├── pages/
  │    │    ├── components/
- │    ├── package.json
- │
- ├── README.md
+ │    └── package.json
+ └── README.md
 
-⭐ 10. Testing Guide (Checklist)
-✔ Signup page working
-✔ Login (all roles)
-✔ Admin Dashboard
-✔ Add Store
-✔ Add User
-✔ Filter Users
-✔ View Stores
-✔ Submit Rating
-✔ Update Rating
-✔ Owner Dashboard
-✔ Validations applied
+<h2 id="testing-checklist">🧪 Testing Checklist</h2>
+✔ Signup (Normal user)
+✔ Login (All roles)
+✔ Add store (Admin)
+✔ Add user (Admin)
+✔ Search & filtering (Admin)
+✔ Submit rating
+✔ Modify rating
+✔ Owner dashboard visibility
+✔ Validations enforced
+✔ Logout logic tested
