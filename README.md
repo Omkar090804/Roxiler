@@ -1,8 +1,7 @@
 <h1 align="center">🌟 FullStack Rating Application 🌟</h1>
 
 <p align="center">
-A complete full-stack application built with <b>Express.js</b> + <b>React.js</b> fulfilling every requirement from the 
-<b>FullStack Intern Coding Challenge</b> :contentReference[oaicite:1]{index=1}.
+A complete full-stack application built with <b>Express.js</b> + <b>React.js</b>
 </p>
 
 ---
